@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseURL: 'https://localhost:49159/',
+  baseURL: 'https://to709pphta.execute-api.us-east-1.amazonaws.com/DEV',
 };
