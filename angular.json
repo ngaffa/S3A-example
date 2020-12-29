@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "s3a-example": {
+    "s3m-example": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/s3a-example",
+            "outputPath": "dist/s3m-example",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -88,18 +88,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "s3a-example:build"
+            "browserTarget": "s3m-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "s3a-example:build:production"
+              "browserTarget": "s3m-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "s3a-example:build"
+            "browserTarget": "s3m-example:build"
           }
         },
         "test": {
@@ -136,15 +136,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "s3a-example:serve"
+            "devServerTarget": "s3m-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "s3a-example:serve:production"
+              "devServerTarget": "s3m-example:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "s3a-example"
+    }
+  },
+  "defaultProject": "s3m-example"
 }

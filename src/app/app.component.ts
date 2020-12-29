@@ -11,7 +11,7 @@ const token =
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 's3a-example';
+  title = 's3m-example';
   items: Observable<any[]>;
   /**
    *
