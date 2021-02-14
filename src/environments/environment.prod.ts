@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseURL: 'https://2iqnryuzgg.execute-api.us-east-1.amazonaws.com/PRDO/',
+  baseURL: 'https://fls16mik64.execute-api.us-east-2.amazonaws.com/dev/',
 };
