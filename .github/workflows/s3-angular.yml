@@ -41,6 +41,13 @@ jobs:
       # Build Angular project with prod tag 
       - name: Build
         run: npm run build -- --prod
+      # To expose the results of the current job to the next job, I need to configure build job to upload the build artifacts.
+      - name: Archive build
+        if: success()
+        uses: actions/upload-artifact@v1
+        with:
+          name: deploy_dist
+          path: dist
         
   # This Job will deploy the Angular project to S3 and it need to wait for the build job
   deploy:
@@ -50,6 +57,10 @@ jobs:
    
   # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Download build #download the artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: deploy_dist
       # Deploy the generated dist/s3m-example folder to AWS S3 : AWS Credentials Are required
       - name: Deploy
         env:
@@ -59,5 +70,5 @@ jobs:
           aws s3 cp \
             --recursive \
             --region us-east-2 \
-            dist/s3m-example s3://s3m-bucket-angular
+            deploy_dist/s3m-example s3://s3m-bucket-angular
      
